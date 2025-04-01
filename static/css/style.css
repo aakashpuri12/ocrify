@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #f8f9fc;
+    --accent-color: #2e59d9;
+    --text-color: #5a5c69;
+    --light-gray: #e3e6f0;
+    --success-color: #1cc88a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    color: var(--text-color);
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.upload-container, .camera-container {
+    background-color: white;
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+}
+
+.upload-container:hover, .camera-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.upload-container i, .camera-container i {
+    transition: all 0.3s ease;
+}
+
+.upload-container:hover i, .camera-container:hover i {
+    transform: scale(1.1);
+}
+
+#filePreview, #cameraPreview {
+    min-height: 150px;
+    background-color: var(--secondary-color);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#filePreview img, #cameraPreview img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.result-container {
+    background-color: white;
+}
+
+.result-text {
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+#processingSpinner {
+    display: inline-block !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .upload-container, .camera-container {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animation for processing */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.processing {
+    animation: pulse 1.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
